@@ -1,0 +1,46 @@
+> Logis_TrgB = glm(OUTCOME~., data = TrgB, family = "binomial")
+> summary(Logis_TrgB)
+
+Call:
+glm(formula = OUTCOME ~ ., family = "binomial", data = TrgB)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-1.0723  -0.5339  -0.3955  -0.2903   2.5860  
+
+Coefficients:
+                          Estimate Std. Error z value Pr(>|z|)    
+(Intercept)              8.944e+00  2.896e+00   3.088  0.00201 ** 
+Bo_Age                   2.611e-02  1.325e-02   1.971  0.04877 *  
+Ln_Orig                  6.360e-07  2.966e-06   0.214  0.83023    
+Orig_LTV_Ratio_Pct       5.077e-03  1.473e-02   0.345  0.73040    
+Credit_score            -8.508e-03  1.784e-03  -4.769 1.85e-06 ***
+First_homeY             -2.700e-01  2.569e-01  -1.051  0.29327    
+Tot_mthly_debt_exp       3.397e-04  2.257e-04   1.505  0.13230    
+Tot_mthly_incm          -1.046e-04  9.846e-05  -1.062  0.28827    
+orig_apprd_val_amt      -5.097e-07  3.172e-06  -0.161  0.87233    
+DTI.Ratio               -2.483e+00  1.160e+00  -2.140  0.03232 *  
+UPB.Appraisal1           5.451e-01  4.288e-01   1.271  0.20366    
+median.income....       -9.762e-05  3.186e-05  -3.064  0.00219 ** 
+X..of.people.in.poverty -1.090e-01  6.632e-02  -1.643  0.10043    
+LoanValuetoAppraised    -6.513e-05  9.139e-05  -0.713  0.47610    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 693.03  on 999  degrees of freedom
+Residual deviance: 643.33  on 986  degrees of freedom
+AIC: 671.33
+
+Number of Fisher Scoring iterations: 5
+
+> exp(coef(Logis_TrgB))
+            (Intercept)                  Bo_Age                 Ln_Orig      Orig_LTV_Ratio_Pct 
+           7.662036e+03            1.026457e+00            1.000001e+00            1.005090e+00 
+           Credit_score             First_homeY      Tot_mthly_debt_exp          Tot_mthly_incm 
+           9.915283e-01            7.633676e-01            1.000340e+00            9.998955e-01 
+     orig_apprd_val_amt               DTI.Ratio          UPB.Appraisal1       median.income.... 
+           9.999995e-01            8.347664e-02            1.724705e+00            9.999024e-01 
+X..of.people.in.poverty    LoanValuetoAppraised 
+           8.967713e-01            9.999349e-01 

@@ -1,0 +1,33 @@
+> summary(D)
+     Bo_Age         Ln_Orig       Orig_LTV_Ratio_Pct  Credit_score   First_home Tot_mthly_debt_exp
+ Min.   :18.00   Min.   : 19600   Min.   : 20.00     Min.   :440.0   N:10944    Min.   :    0     
+ 1st Qu.:30.00   1st Qu.:103500   1st Qu.: 90.00     1st Qu.:647.0   Y: 4209    1st Qu.: 1073     
+ Median :37.00   Median :141500   Median : 95.00     Median :688.0              Median : 1578     
+ Mean   :36.79   Mean   :153468   Mean   : 93.08     Mean   :687.7              Mean   : 1745     
+ 3rd Qu.:41.00   3rd Qu.:190950   3rd Qu.:100.00     3rd Qu.:737.0              3rd Qu.: 2253     
+ Max.   :99.00   Max.   :599000   Max.   :111.00     Max.   :999.0              Max.   :17225     
+                                                                                                  
+ Tot_mthly_incm  orig_apprd_val_amt  pur_prc_amt       DTI.Ratio          Status    
+ Min.   :  500   Min.   :     0     Min.   : 20000   Min.   :0.0000   Active :7893  
+ 1st Qu.: 3245   1st Qu.:113000     1st Qu.:108900   1st Qu.:0.2779   Default: 402  
+ Median : 4632   Median :154000     Median :148650   Median :0.3762   Pay-off:6858  
+ Mean   : 5025   Mean   :170661     Mean   :164682   Mean   :0.3747                 
+ 3rd Qu.: 6000   3rd Qu.:214000     3rd Qu.:205000   3rd Qu.:0.4710                 
+ Max.   :65000   Max.   :870000     Max.   :870000   Max.   :3.4281                 
+                                                                                    
+        OUTCOME          State      UPB.Appraisal    median.income.... X..of.people.in.poverty
+ default    :  402   FL     :1945   Min.   :0.0000   Min.   :32589     Min.   : 5.70          
+ non-default:14751   CA     :1453   1st Qu.:0.0000   1st Qu.:40171     1st Qu.:10.70          
+                     GA     :1295   Median :0.0000   Median :43988     Median :12.30          
+                     TX     :1018   Mean   :0.4511   Mean   :44946     Mean   :12.34          
+                     IL     : 816   3rd Qu.:1.0000   3rd Qu.:49894     3rd Qu.:13.80          
+                     VA     : 652   Max.   :1.0000   Max.   :57352     Max.   :17.70          
+                     (Other):7974                                                             
+ LoanValuetoAppraised
+ #DIV/0!:   19       
+ 0.5    :   18       
+ 0.8    :   14       
+ 1      :   14       
+ 0.95   :   12       
+ 2      :   12       
+ (Other):15064    

@@ -1,0 +1,11 @@
+> #Sampling Traning data to contain 30% and 10% default 'OUTCOME' cases
+> TrgA <- ovun.sample(OUTCOME~., data = Train, method = "both", p=0.3, N=1000, seed = 2014)$data
+> table(TrgA$OUTCOME)
+
+non-default     default 
+        697         303 
+> TrgB <- ovun.sample(OUTCOME~., data = Train, method = "both", p=0.1, N=1000, seed = 2014)$data
+> table(TrgB$OUTCOME)
+
+non-default     default 
+        890         110 

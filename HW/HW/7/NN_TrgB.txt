@@ -1,0 +1,59 @@
+> maxs = apply(TrgB[,c(1:4, 6:9, 12:14)], 2, max)
+> mins = apply(TrgB[,c(1:4, 6:9, 12:14)], 2, min)
+> # Use scale() and convert the resulting matrix to a data frame
+> scaled.data = as.data.frame(scale(TrgB[,c(1:4, 6:9, 12:14)], center = mins, scale = maxs - mins))
+> head(scaled.data)
+     Bo_Age   Ln_Orig Orig_LTV_Ratio_Pct Credit_score Tot_mthly_debt_exp Tot_mthly_incm
+1 0.1794872 0.3266108          0.9259259    0.4334471         0.08028098      0.4202733
+2 0.3076923 0.4592377          0.9259259    0.5802048         0.26743603      0.4044944
+3 0.4358974 0.2727739          0.7407407    0.4061433         0.42348219      0.3013568
+4 0.8717949 0.4570159          0.7407407    0.5392491         0.43075765      0.2222811
+5 0.4102564 0.3897112          0.5555556    0.4675768         0.51630707      0.5470638
+6 0.2564103 0.6104016          0.7407407    0.3856655         0.15178123      0.1055756
+  orig_apprd_val_amt  DTI.Ratio median.income.... X..of.people.in.poverty LoanValuetoAppraised
+1         0.02366864 0.02112247         0.0000000               0.8504673            0.9690639
+2         0.33431953 0.31648835         0.2407220               0.7383178            0.6269472
+3         0.54142012 0.63941098         0.4700157               0.6915888            0.2326394
+4         0.13313609 0.82486386         0.4723580               0.3177570            0.8879022
+5         0.70414201 0.47040717         0.6988249               0.5794393            0.2493813
+6         0.15976331 0.48112605         0.7092436               0.1401869            0.9168729
+> summary(scaled.data)
+     Bo_Age          Ln_Orig       Orig_LTV_Ratio_Pct  Credit_score    Tot_mthly_debt_exp
+ Min.   :0.0000   Min.   :0.0000   Min.   :0.0000     Min.   :0.0000   Min.   :0.0000    
+ 1st Qu.:0.3077   1st Qu.:0.2577   1st Qu.:0.5556     1st Qu.:0.4121   1st Qu.:0.2637    
+ Median :0.4872   Median :0.3777   Median :0.7407     Median :0.5427   Median :0.3944    
+ Mean   :0.4491   Mean   :0.4187   Mean   :0.7016     Mean   :0.5486   Mean   :0.4081    
+ 3rd Qu.:0.5385   3rd Qu.:0.5528   3rd Qu.:0.9259     3rd Qu.:0.7133   3rd Qu.:0.5396    
+ Max.   :1.0000   Max.   :1.0000   Max.   :1.0000     Max.   :1.0000   Max.   :1.0000    
+ Tot_mthly_incm   orig_apprd_val_amt   DTI.Ratio      median.income.... X..of.people.in.poverty
+ Min.   :0.0000   Min.   :0.0000     Min.   :0.0000   Min.   :0.0000    Min.   :0.0000         
+ 1st Qu.:0.2795   1st Qu.:0.2604     1st Qu.:0.3657   1st Qu.:0.3508    1st Qu.:0.3178         
+ Median :0.4203   Median :0.3787     Median :0.4821   Median :0.4673    Median :0.4953         
+ Mean   :0.4286   Mean   :0.4153     Mean   :0.4709   Mean   :0.5141    Mean   :0.4896         
+ 3rd Qu.:0.5339   3rd Qu.:0.5457     3rd Qu.:0.5927   3rd Qu.:0.6988    3rd Qu.:0.5794         
+ Max.   :1.0000   Max.   :1.0000     Max.   :1.0000   Max.   :1.0000    Max.   :1.0000         
+ LoanValuetoAppraised
+ Min.   :0.0000      
+ 1st Qu.:0.2365      
+ Median :0.4795      
+ Mean   :0.4922      
+ 3rd Qu.:0.7526      
+ Max.   :1.0000      
+> #Adding Outcome to the scaled data set
+> OUTCOME = TrgB$OUTCOME
+> data = data.frame(OUTCOME,scaled.data)
+> head(data)
+      OUTCOME    Bo_Age   Ln_Orig Orig_LTV_Ratio_Pct Credit_score Tot_mthly_debt_exp Tot_mthly_incm
+1 non-default 0.1794872 0.3266108          0.9259259    0.4334471         0.08028098      0.4202733
+2 non-default 0.3076923 0.4592377          0.9259259    0.5802048         0.26743603      0.4044944
+3 non-default 0.4358974 0.2727739          0.7407407    0.4061433         0.42348219      0.3013568
+4 non-default 0.8717949 0.4570159          0.7407407    0.5392491         0.43075765      0.2222811
+5 non-default 0.4102564 0.3897112          0.5555556    0.4675768         0.51630707      0.5470638
+6 non-default 0.2564103 0.6104016          0.7407407    0.3856655         0.15178123      0.1055756
+  orig_apprd_val_amt  DTI.Ratio median.income.... X..of.people.in.poverty LoanValuetoAppraised
+1         0.02366864 0.02112247         0.0000000               0.8504673            0.9690639
+2         0.33431953 0.31648835         0.2407220               0.7383178            0.6269472
+3         0.54142012 0.63941098         0.4700157               0.6915888            0.2326394
+4         0.13313609 0.82486386         0.4723580               0.3177570            0.8879022
+5         0.70414201 0.47040717         0.6988249               0.5794393            0.2493813
+6         0.15976331 0.48112605         0.7092436               0.1401869            0.9168729

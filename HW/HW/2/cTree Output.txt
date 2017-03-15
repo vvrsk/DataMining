@@ -1,0 +1,31 @@
+	 Conditional inference tree with 9 terminal nodes
+
+Response:  Class.variable 
+Inputs:  Times.Pregnant, P.Glucose.conc, Diastolic.BP, Triceps.skin.thickness, X2.Hour.serum.insulin, Body.mass.index, Diabetes.pedigree.function, Age 
+Number of observations:  540 
+
+1) P.Glucose.conc <= 127; criterion = 1, statistic = 129.739
+  2) Times.Pregnant <= 6; criterion = 1, statistic = 22.92
+    3) Age <= 28; criterion = 0.999, statistic = 14.947
+      4) Body.mass.index <= 30.9; criterion = 0.99, statistic = 10.355
+        5)*  weights = 104 
+      4) Body.mass.index > 30.9
+        6)*  weights = 92 
+    3) Age > 28
+      7) P.Glucose.conc <= 114; criterion = 0.973, statistic = 8.558
+        8)*  weights = 58 
+      7) P.Glucose.conc > 114
+        9)*  weights = 28 
+  2) Times.Pregnant > 6
+    10) Diabetes.pedigree.function <= 0.209; criterion = 0.955, statistic = 7.615
+      11)*  weights = 12 
+    10) Diabetes.pedigree.function > 0.209
+      12)*  weights = 48 
+1) P.Glucose.conc > 127
+  13) P.Glucose.conc <= 154; criterion = 1, statistic = 19.316
+    14) Body.mass.index <= 29.9; criterion = 0.977, statistic = 8.852
+      15)*  weights = 35 
+    14) Body.mass.index > 29.9
+      16)*  weights = 82 
+  13) P.Glucose.conc > 154
+    17)*  weights = 81 
